@@ -1,0 +1,22 @@
+html {
+    font-family: "Source Sans Pro";
+}
+
+body{
+    min-width: 200px;
+}
+
+.container {
+    margin-left: auto;
+    margin-right: auto;
+    width: 96%;
+    max-width: 1200px;
+}
+
+.text-hiden{
+    display: none;
+}
+
+#outro:checked ~ input {
+        display: inline;
+}
