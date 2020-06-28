@@ -3,7 +3,7 @@
 }
 
 .header-desktop{
-    height: 80px;
+    height: 60px;
     display: block;
     text-transform: uppercase;
     border-top: 4px solid #FFE000;
@@ -34,6 +34,7 @@
     display: flex;
     align-items: center;
 }
+
 
 .content-menu-button {
     font-weight: 600;
@@ -158,13 +159,15 @@
 }
 
  /* icones */
-.header-item-link--dashboard:before {
-    background-image: url(../img/icon-dashboard.svg)
+
+.header-item-link--ship:before {
+    background-image: url(../img/icon-ship.svg);
+    color: #747c81;
 }
 
 /* menu notification */
 .header-news-button {
-    background: url(../img/icon-dashboard.svg) no-repeat center;
+    /* background: url(../img/icon-ship.svg) no-repeat center; */
     border: none;
     width: 22px;
     height: 25px;

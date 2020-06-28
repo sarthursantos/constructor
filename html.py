@@ -1,5 +1,8 @@
 
 
+# -------------------------------------
+# Esta Class será utilizada futuramente
+# -------------------------------------
 class HtmlAtr:
     def __init__(self, title, header, footer):
         self.title = title

@@ -1,6 +1,7 @@
 html {
-    font-family: sans-serif;
+    font-family: "Source Sans Pro";
 }
+
 body{
     min-width: 200px;
 }
@@ -11,15 +12,6 @@ body{
     width: 96%;
     max-width: 1200px;
 }
-
-
-
-
-
-
-
-
-
 
 .text-hiden{
     display: none;
