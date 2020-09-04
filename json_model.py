@@ -1,13 +1,31 @@
-
-test_json = {
+Json = {
     'title': '',
+
     'header': {
-        'logo_img': '',
-        'logo_link': '',
-        'menu': [],
-        'btn_drop_down': {},
-        "btn_secondary": {},
-        "btn_img": {},
+        'logo': {
+            'img': '',
+            'onclick': ''
+        },
+
+        'menu': [
+            {
+                'btn': '',
+                'img': '',
+                'drop': [
+                    {
+                        'btn': '',
+                        'onclick': '',
+                        'btn_sec': '',
+                        'onclick_sec': ''
+                    }
+                ]
+            },
+        ]
     },
+
+    'banner': {
+        'title': ''
+    },
+
     'footer': {}
 }
