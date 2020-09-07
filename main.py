@@ -45,11 +45,21 @@ def _btn(btn):
         nav = _btn_drop(btn['drop'])
     else:
         div += '">'
+
     a = '<a class="content-menu-button"'
-    a += f''' onclick="{btn['onclick']}">''' if 'onclick' in btn and btn['onclick'] else '>'
+    var = []
+    if 'url' in btn:
+        var.append(btn['url'])
+        if 'banner' in btn:
+            var.append(btn['banner'])
+        a += f''' onclick="get_data('{"','".join(var)}')">'''
+    else:
+        a += '>'
+    # a += f''' onclick="get_data('{btn['url']}')">''' if 'url' in btn and btn['url'] else '>'
     a += f'''<img src={btn['img']} class="headline-profile-avatar">''' if 'img' in btn and btn['img'] else ''
     a += f'''{btn['btn']}</a>'''
     div += a
+
     div += nav
     div += '</div>'
     return div
@@ -58,10 +68,18 @@ def _btn(btn):
 def _btn_drop(btn_drop):
     nav = '<nav class="header-nav header-nav-profile" tabindex="-1">'
     for btn in btn_drop:
+        var = []
+        if 'url' in btn:
+            var.append(btn['url'])
+            if 'banner' in btn:
+                var.append(btn['banner'])
+
         if 'btn_sec' in btn and btn['btn_sec']:
             nav += '<nav class="header-nav-subLinks">'
             nav += '<a class="header-subLinks-firstLink" tabindex="-1"'
-            nav += f''' onclick="{btn['onclick']}">''' if 'onclick' in btn and btn['onclick'] else '>'
+
+            nav += f''' onclick="get_data('{"','".join(var)}')">'''
+
             nav += btn['btn']
             nav += '</a>'
             nav += '<a class="header-subLinks-secondLink" tabindex="-1"'
@@ -71,7 +89,10 @@ def _btn_drop(btn_drop):
             nav += '</nav>'
         else:
             nav += f'''<a class="header-nav-link" tabindex="-1"'''
-            nav += f''' onclick="{btn['onclick']}">''' if 'onclick' in btn_drop and btn['onclick'] else '>'
+
+            nav += f''' onclick="get_data('{"','".join(var)}')">'''
+            # nav += f''' onclick="{btn['onclick']}">''' if 'onclick' in btn_drop and btn['onclick'] else '>'
+
             nav += f'''{btn['btn']}</a>'''
     nav += '</nav>'
     return nav
@@ -94,7 +115,7 @@ def _body(header):
         {header}
         <div class="banner">
             <div class="container">
-                <h1 id="banner-title">home</h1>
+                <h1 id="banner-title">{Json['banner']['title']}</h1>
             </div>
         </div>
         <div>
@@ -106,7 +127,7 @@ def _body(header):
             </div>
         </div>
         <script src="js/menu.js"></script>
-        <script src="js/app/index.js"></script>
+        <script src="src/index.js"></script>
         </body>
     '''
 
